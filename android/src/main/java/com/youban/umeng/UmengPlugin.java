@@ -112,7 +112,7 @@ public class UmengPlugin implements MethodCallHandler {
      * 参数1： context 当前宿主进程的ApplicationContext上下文 参数2： eventId 为当前统计的事件ID 参数3： label
      * 为事件的标签属性
      */
-    MobclickAgent.onEvent((Context) activity, (String) call.argument("eventId"), (String) call.argument("label"));
+    MobclickAgent.onEvent((Context) activity, (String) call.argument("eventId"));
     result.success(null);
   }
 
