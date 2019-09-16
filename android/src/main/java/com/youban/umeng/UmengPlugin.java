@@ -21,7 +21,7 @@ public class UmengPlugin implements MethodCallHandler {
     final MethodChannel channel = new MethodChannel(registrar.messenger(), "umeng");
     channel.setMethodCallHandler(new UmengPlugin());
   }
-  private FlutterUmengAnalyticsPlugin(Activity activity) {
+  private UmengPlugin(Activity activity) {
     this.activity = activity;
   }
 
