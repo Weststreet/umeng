@@ -19,7 +19,7 @@ public class UmengPlugin implements MethodCallHandler {
   /** Plugin registration. */
   public static void registerWith(Registrar registrar) {
     final MethodChannel channel = new MethodChannel(registrar.messenger(), "umeng");
-    channel.setMethodCallHandler(new UmengPlugin());
+    channel.setMethodCallHandler(new UmengPlugin(registrar.activity()));
   }
   private UmengPlugin(Activity activity) {
     this.activity = activity;
