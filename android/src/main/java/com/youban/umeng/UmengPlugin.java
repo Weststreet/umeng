@@ -7,6 +7,7 @@ import android.os.Build;
 import com.umeng.analytics.MobclickAgent;
 import com.umeng.commonsdk.UMConfigure;
 
+import io.flutter.Log;
 import io.flutter.plugin.common.MethodCall;
 import io.flutter.plugin.common.MethodChannel;
 import io.flutter.plugin.common.MethodChannel.MethodCallHandler;
@@ -108,11 +109,13 @@ public class UmengPlugin implements MethodCallHandler {
    * @param result
    */
   public void eventCounts(MethodCall call, Result result) {
+    String eventId=(String) call.argument("name");
+    Log.d("TAG","eventId="+eventId);
     /**
      * 参数1： context 当前宿主进程的ApplicationContext上下文 参数2： eventId 为当前统计的事件ID 参数3： label
      * 为事件的标签属性
      */
-    MobclickAgent.onEvent((Context) activity, (String) call.argument("name"));
+    MobclickAgent.onEvent((Context) activity, eventId);
     result.success(null);
   }
 
